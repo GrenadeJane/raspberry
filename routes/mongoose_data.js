@@ -6,10 +6,10 @@
  let uri;
  uri = 'mongodb://root:raspberry6@ds247191.mlab.com:47191/raspberry-grenade'; 
 
- mongoose.connect(uri, {useNewUrlParser : true })
+ mongoose.connect(uri)
  	.then(() => console.log('Connected to MongoDB ... '))
  	.catch(err => console.log('Could not connect to MongoDB ...', err));
-
+ 
 // 	const Groceries = mongoose.model('Groceries', new mongoose.Schema({
 // 		sender : {
 // 			type : String, 
