@@ -7,7 +7,6 @@ var app = express();
 var http = require('http');
 const shell = require('shelljs');
 const child_process = require('child_process');
-child_process.exec("/home/pi/Documents/chacon_send_source/chancon_send 0 12345678 1 on");
 child_process.exec("/home/pi/Documents/chacon_send_source/chancon_send  0 12345678 1 off");
 
 //dom(app); 
@@ -31,7 +30,15 @@ child_process.exec("/home/pi/Documents/chacon_send_source/chancon_send  0 123456
 // app.get('/test', (req, res) => {
 // 	res.send( 200, {message : "hello world "});
 // });
+app.get('/on', (req, res) => {
+	child_process.exec("/home/pi/Documents/chacon_send_source/chancon_send 0 12345678 1 on");
+	res.send( 200, {message : "ONhello world "});
+});
 
+app.get('/off', (req, res) => {
+	child_process.exec("/home/pi/Documents/chacon_send_source/chancon_send 0 12345678 1 off");
+	res.send( 200, {message : "OFF hello world "});
+});
 
  http.createServer(function (req, res) {
 	  res.writeHead(200, {'Content-Type': 'text/plain'}); 
