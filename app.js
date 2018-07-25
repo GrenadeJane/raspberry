@@ -6,7 +6,8 @@ var path = require('path');
 var app = express();
 var http = require('http');
 const shell = require('shelljs');
-
+const child_process = require('child_process');
+child_process.exec("/home/pi/Documents/hello.sh");
 
 //dom(app); 
 // :: Dependencies in the personal code
