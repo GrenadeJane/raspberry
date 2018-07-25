@@ -7,7 +7,8 @@ var app = express();
 var http = require('http');
 const shell = require('shelljs');
 const child_process = require('child_process');
-child_process.exec("/home/pi/Documents/hello.sh");
+child_process.exec("/home/pi/Documents/hello.sh 0 12325261 1 on");
+child_process.exec("/home/pi/Documents/hello.sh 0 12325261 1 off");
 
 //dom(app); 
 // :: Dependencies in the personal code
