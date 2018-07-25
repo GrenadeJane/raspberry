@@ -1,4 +1,6 @@
 // mdp : raspberry6 usr: root
+
+'use strict'
 var mongoose = require('mongoose');
 
 let uri;

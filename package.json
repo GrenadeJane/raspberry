@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/GrenadeJane/raspberry#readme",
   "dependencies": {
-    "mongoose": "^5.2.5"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.5",
+    "path": "^0.12.7"
   }
 }
