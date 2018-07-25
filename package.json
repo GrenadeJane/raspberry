@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/GrenadeJane/raspberry/issues"
   },
-  "homepage": "https://github.com/GrenadeJane/raspberry#readme"
+  "homepage": "https://github.com/GrenadeJane/raspberry#readme",
+  "dependencies": {
+    "mongoose": "^5.2.5"
+  }
 }
