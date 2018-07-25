@@ -1,0 +1,24 @@
+{
+  "name": "raspberry-server",
+  "version": "1.0.0",
+  "description": " create a server with a raspberry and node js - to talk with a database and input from users",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrenadeJane/raspberry.git"
+  },
+  "keywords": [
+    "raspberry",
+    "nodejs",
+    "ui"
+  ],
+  "author": "Léa Heitz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GrenadeJane/raspberry/issues"
+  },
+  "homepage": "https://github.com/GrenadeJane/raspberry#readme"
+}
