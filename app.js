@@ -56,5 +56,5 @@ app.get('/', (req, res) => {
 // 	res.send( {message : "OFF"});
 // });
 
-app.listen(process.env.PORT || 8000, () => console.log('listen to ' + process.env.PORT));
+app.listen(process.env.PORT || 80, () => console.log('listen to ' + process.env.PORT));
 console.log('Server running');
