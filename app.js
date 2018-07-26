@@ -1,5 +1,4 @@
 'use strict'
-const Groceries = require('./routes/mongoose_data');
 var bodyParser = require('body-parser');
 var express = require('express');
 var path = require('path');
@@ -9,6 +8,9 @@ const shell = require('shelljs');
 const child_process = require('child_process');
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 //dom(app); 
 // :: Dependencies in the personal code
 
@@ -33,14 +35,12 @@ app.set('view engine', 'html');
 
 
 app.post('/remote',( req, res ) => {
-	console.dir(req);
-	// const body = JSON.parse(req.body);
-	// if ( body.blower ) {
-	// 	var state = body.state;
-	// 	//child_process.exec('"/home/pi/Documents/chacon_send_source/chacon_send" 0 12345678 1 on');
-	// 	res.send(200);
-	// }
-	res.send(200);
+	const body = req.body;
+	 if ( body.blower ) {
+		 console.log(body.blower);
+		child_process.exec('"/home/pi/Documents/chacon_send_source/chacon_send" 0 12345678 1 ' +  body.blower );
+		res.redirect('/');
+	}
 });
 
 app.get('/', (req, res) => {
@@ -56,5 +56,5 @@ app.get('/', (req, res) => {
 // 	res.send( {message : "OFF"});
 // });
 
-app.listen(process.env.PORT || 80, () => console.log('listen to ' + process.env.PORT));
+app.listen(process.env.PORT || 8000, () => console.log('listen to ' + process.env.PORT));
 console.log('Server running');
