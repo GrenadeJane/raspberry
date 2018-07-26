@@ -7,8 +7,8 @@ var app = express();
 var http = require('http');
 const shell = require('shelljs');
 const child_process = require('child_process');
-child_process.exec("/home/pi/Documents/chacon_send_source/chancon_send  0 12345678 1 off");
-
+// app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
 //dom(app); 
 // :: Dependencies in the personal code
 
@@ -30,15 +30,31 @@ child_process.exec("/home/pi/Documents/chacon_send_source/chancon_send  0 123456
 // app.get('/test', (req, res) => {
 // 	res.send( 200, {message : "hello world "});
 // });
-app.get('/on', (req, res) => {
-	child_process.exec("/home/pi/Documents/chacon_send_source/chancon_send 0 12345678 1 on");
-	res.send( 200, {message : "ONhello world "});
+
+
+app.post('/remote',( req, res ) => {
+	console.dir(req);
+	// const body = JSON.parse(req.body);
+	// if ( body.blower ) {
+	// 	var state = body.state;
+	// 	//child_process.exec('"/home/pi/Documents/chacon_send_source/chacon_send" 0 12345678 1 on');
+	// 	res.send(200);
+	// }
+	res.send(200);
 });
 
-app.get('/off', (req, res) => {
-	child_process.exec("/home/pi/Documents/chacon_send_source/chancon_send 0 12345678 1 off");
-	res.send( 200, {message : "OFF hello world "});
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, './views/index.html'));
 });
+// app.get('/on', (req, res) => {
+// 	child_process.exec('"/home/pi/Documents/chacon_send_source/chacon_send" 0 12345678 1 on');
+// 	res.send( {message : "ON"});
+// });
+
+// app.get('/off', (req, res) => {
+// 	child_process.exec('"/home/pi/Documents/chacon_send_source/chacon_send" 0 12345678 1 off');
+// 	res.send( {message : "OFF"});
+// });
 
 app.listen(process.env.PORT || 80, () => console.log('listen to ' + process.env.PORT));
 console.log('Server running');
